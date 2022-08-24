@@ -10,6 +10,30 @@ void Stop(){
     if (!INPUTS[LEF]) OUTPUTS[RDC] = false;
 }
 
+
+void Fast(){
+    OUTPUTS[FAST] = true;
+}
+
+void Slow(){
+    OUTPUTS[SLOW] = true;
+}
+
+void Medium(){
+
+}
+
+void Up(){
+    OUTPUTS[DOWN] = false;
+    OUTPUTS[UP] = true;
+}
+
+void Down(){
+    OUTPUTS[UP] = false;
+    OUTPUTS[DOWN] = true;
+}
+
+
 void Rev_Up() {
 
     if (INPUTS[CAN] == false)
@@ -18,10 +42,33 @@ void Rev_Up() {
     OUTPUTS[RDC] = true;
 
     if (INPUTS[RVU] && INPUTS[CAN] == true) {
-        OUTPUTS[SLOW] = true;
-        OUTPUTS[UP] = true;
+        Slow();
+        Up();
     }
 
 }
 
 
+
+void Rev_Down(){
+
+    if (INPUTS[CAN] == false)
+        return;
+
+    OUTPUTS[RDC] = true;
+
+    if (INPUTS[RVU] && INPUTS[CAN] == true){
+        Slow();
+        Down();
+    }
+
+}
+
+
+void Start_Move(){
+
+}
+
+void Speed_Conf(){
+
+}

@@ -2,6 +2,7 @@
 #define MOVE_H
 
 #include "eldefs.h"
+#include "io_updator.h"
 
 void Rev_Up();
 void Rev_Down();

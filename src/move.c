@@ -1,8 +1,7 @@
 #include "move.h"
 
 
-
-void Stop(){
+void Stop() {
     OUTPUTS[UP] = false;
     OUTPUTS[DOWN] = false;
     OUTPUTS[FAST] = false;
@@ -11,24 +10,28 @@ void Stop(){
 }
 
 
-void Fast(){
+void Fast() {
+    OUTPUTS[FAST] = true;
+    OUTPUTS[SLOW] = false;
+}
+
+void Slow() {
+    OUTPUTS[SLOW] = true;
+    OUTPUTS[FAST] = false;
+}
+
+void Medium() {
+
+    OUTPUTS[SLOW] = true;
     OUTPUTS[FAST] = true;
 }
 
-void Slow(){
-    OUTPUTS[SLOW] = true;
-}
-
-void Medium(){
-
-}
-
-void Up(){
+void Up() {
     OUTPUTS[DOWN] = false;
     OUTPUTS[UP] = true;
 }
 
-void Down(){
+void Down() {
     OUTPUTS[UP] = false;
     OUTPUTS[DOWN] = true;
 }
@@ -49,15 +52,14 @@ void Rev_Up() {
 }
 
 
+void Rev_Down() {
 
-void Rev_Down(){
-
-    if (INPUTS[CAN] == false)
+    if (INPUTS[CA1] == false)
         return;
 
     OUTPUTS[RDC] = true;
 
-    if (INPUTS[RVU] && INPUTS[CAN] == true){
+    if (INPUTS[RVU] && INPUTS[CAN] == true) {
         Slow();
         Down();
     }
@@ -65,10 +67,12 @@ void Rev_Down(){
 }
 
 
-void Start_Move(){
+void Start_Move() {
 
+    InputUpdate();
+    OutputUpdate();
 }
 
-void Speed_Conf(){
+void Speed_Conf() {
 
 }

@@ -1,6 +1,14 @@
 #include "move.h"
 
 
+extern char slf;
+extern char lef ;
+extern char door_check;
+extern char RUN ;
+extern char slf_conter ;
+extern char lef_conter ;
+
+
 void Stop() {
     OUTPUTS[UP] = false;
     OUTPUTS[DOWN] = false;

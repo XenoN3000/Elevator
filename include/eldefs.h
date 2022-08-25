@@ -6,9 +6,12 @@
 
 #define INPUT_ARRAY_SIZE    39
 #define OUTPUT_ARRAY_SIZE   33
+#define ERR_MESSAGE_LEN     17
+
 
 _Bool INPUTS[INPUT_ARRAY_SIZE];
 _Bool OUTPUTS[OUTPUT_ARRAY_SIZE];
+
 
 enum Output_Array_Indexs {
     RDO = 8,
@@ -66,8 +69,8 @@ enum Input_Array_Indexs {
 };
 
 
-enum Mode{
-    Revsion,
+enum Mode {
+    Revision,
     Normal
 };
 

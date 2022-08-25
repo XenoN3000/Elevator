@@ -11,4 +11,6 @@
 
 int Error_check(int);
 
+void Show_error(int);
+
 #endif //ELEVATOR_EL_ERRORS_H

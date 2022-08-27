@@ -4,8 +4,8 @@
 
 #include "eldefs.h"
 
-char slf = 1;
-char lef = 1;
+bool slf = 1;
+bool lef = 1;
 char door_check = 2;
 char RUN = 0;
 char slf_conter = 0;
@@ -25,12 +25,16 @@ char ListOfErrors[][ERR_MESSAGE_LEN] = {"", "1-Input Err", "2-Fto Act", "3-CA1&C
                                         "44-Car_Led Short"};
 
 
-unsigned char MenuItems[51][16] = {"Welcome", "1.Max Floor :", "2.Numerator :", "3.Door Type :", "4.Slf Flag :",
-                                   "5.Dc Time :", "6.Do Time :", "7.Light Time :", "8.Move Time :", "9.Up/DN Delay :",
+char MenuItems[][MENU_ITEM_LEN] = {"Welcome", "1.Max Floor :", "2.Numerator :", "3.Door Type :",
+                                   "4.Slf Flag :",
+                                   "5.Dc Time :", "6.Do Time :", "7.Light Time :", "8.Move Time :",
+                                   "9.Up/DN Delay :",
                                    "10.Dm Delay :", "11.Door In Park:", "12.Park Floor:", "13.Base Floor:",
-                                   "14.Dir Speed Delay", "15.Detect Floor :", "16.Lift Logic:", "17.Display Adj:",
+                                   "14.Dir Speed Delay", "15.Detect Floor :", "16.Lift Logic:",
+                                   "17.Display Adj:",
                                    "18.Relay Status:", "19.Error List:", "20.Adj Tow Door", "21.Delete Error",
-                                   "22.Duplex Mode:", "23.Move Counter", "24.Spr(1) Input:", "25.Spr(2) Input:",
+                                   "22.Duplex Mode:", "23.Move Counter", "24.Spr(1) Input:",
+                                   "25.Spr(2) Input:",
                                    "26.Coding:", "27.Canceling :", "28.Hyd Relevel :", "29.Advance Open:",
                                    "30.Set Rdo_Out:", "31.Carcodec:", "32.Verify Mode:", "33.Password:",
                                    "34.Timer Hyd:", "35.Lift Type:", "36.Short Floor:", "37.Flag Set:",
@@ -39,13 +43,20 @@ unsigned char MenuItems[51][16] = {"Welcome", "1.Max Floor :", "2.Numerator :", 
                                    "46.Ins&Rev Err:", "47.CFC&CFS Mode:", "48.Speech Mode:", "49.Speaker Vol:",
                                    "50.Speech Album:"};
 
-unsigned char SubItems[59][16] = {"Pardis Control", "Value : #$", "(Auto Setup)", "2.Semi Door", "1.First Flag",
-                                  "Value : #$  S", "Value : #$  S", "Value : #$  S", "Value : #$  S", "Value : #.$ S",
-                                  "Value : #.$ S", "1.Open Mode", "P: #   T: $ Min", "Value : #$", "Value : #.$ S",
-                                  "3.Fast Speed", "1.Collect Down", "Floor:$  Num:% ", "5.UPS Mode", "Last 30 Error",
-                                  "(Relay DO/DC)", "(Remove List)", "0.Disable", "(No Access)", "0.Control Load",
-                                  "2.Emr (nc)", "(More Safe)", "1.Disabble", "1.Disable", "0.Disable", "0.Do_Relay",
-                                  "0.Enable", "(Show Changed)", "1.Disable", "Value : #$  S", "1. 3VF board",
-                                  "(Middle Speed)", "(Num Slf To Stp)", "(Board Test)", "0.Enable", "(Rst Parameter)",
-                                  "0.Disable", "1.Disable", "Value : #$  S", "Value : #$  S", "Value : #$  S",
-                                  "0.Enable", "0. NO", "1.Parallel", "0.Disable", "0.Disable"};
+char SubItems[][SUB_ITEM_LEN] = {"Pardis Control", "Value : #$", "(Auto Setup)", "2.Semi Door",
+                                 "1.First Flag",
+                                 "Value : #$  S", "Value : #$  S", "Value : #$  S", "Value : #$  S",
+                                 "Value : #.$ S",
+                                 "Value : #.$ S", "1.Open Mode", "P: #   T: $ Min", "Value : #$",
+                                 "Value : #.$ S",
+                                 "3.Fast Speed", "1.Collect Down", "Floor:$  Num:% ", "5.UPS Mode",
+                                 "Last 30 Error",
+                                 "(Relay DO/DC)", "(Remove List)", "0.Disable", "(No Access)",
+                                 "0.Control Load",
+                                 "2.Emr (nc)", "(More Safe)", "1.Disabble", "1.Disable", "0.Disable",
+                                 "0.Do_Relay",
+                                 "0.Enable", "(Show Changed)", "1.Disable", "Value : #$  S", "1. 3VF board",
+                                 "(Middle Speed)", "(Num Slf To Stp)", "(Board Test)", "0.Enable",
+                                 "(Rst Parameter)",
+                                 "0.Disable", "1.Disable", "Value : #$  S", "Value : #$  S", "Value : #$  S",
+                                 "0.Enable", "0. NO", "1.Parallel", "0.Disable", "0.Disable"};

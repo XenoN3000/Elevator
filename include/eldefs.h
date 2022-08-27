@@ -7,6 +7,8 @@
 #define INPUT_ARRAY_SIZE    39
 #define OUTPUT_ARRAY_SIZE   33
 #define ERR_MESSAGE_LEN     17
+#define MENU_ITEM_LEN       18
+#define SUB_ITEM_LEN        17
 
 
 _Bool INPUTS[INPUT_ARRAY_SIZE];
@@ -69,9 +71,9 @@ enum Input_Array_Indexs {
 };
 
 
-enum Mode {
+typedef enum Mode {
     Revision,
     Normal
-};
+} ElevatorMode;
 
 #endif

@@ -8,9 +8,12 @@
 #include "avr/io.h"
 #include "eldefs.h"
 #include "lcd.h"
+#include "io_updator.h"
 
-int Error_check(int);
+int Error_check(ElevatorMode);
 
 void Show_error(int);
+
+void Flag_check();
 
 #endif //ELEVATOR_EL_ERRORS_H

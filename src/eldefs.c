@@ -62,3 +62,24 @@ char SubItems[][SUB_ITEM_LEN] = {"Pardis Control", "Value : #$", "(Auto Setup)",
                                  "(Rst Parameter)",
                                  "0.Disable", "1.Disable", "Value : #$  S", "Value : #$  S", "Value : #$  S",
                                  "0.Enable", "0. NO", "1.Parallel", "0.Disable", "0.Disable"};
+
+
+
+void IO_Init(){
+
+    PORTA = 0;
+    PORTB = 0;
+    PORTC = 0;
+    PORTD = 0;
+    PORTE = 0;
+    PORTG = 0;
+    PORTF = 0;
+
+    DDRA = 0;
+    DDRB = 0;
+    DDRC = 0;
+    DDRD = 0;
+    DDRE = 0;
+    DDRF = 0;
+    DDRG = 0;
+}

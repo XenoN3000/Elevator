@@ -18,6 +18,8 @@ _Bool OUTPUTS[OUTPUT_ARRAY_SIZE];
 enum Output_Array_Indexs {
     RDO = 8,
     RDC,
+    CL,
+    DM,
     UP,
     DOWN,
     FAST,
@@ -75,5 +77,7 @@ typedef enum Mode {
     Revision,
     Normal
 } ElevatorMode;
+
+void IO_Init();
 
 #endif

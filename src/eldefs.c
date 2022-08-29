@@ -11,6 +11,8 @@ char RUN = 0;
 char slf_conter = 0;
 char lef_conter = 0;
 
+char MaxFloor = 2;
+
 
 char ListOfErrors[][ERR_MESSAGE_LEN] = {"", "1-Input Err", "2-Fto Act", "3-CA1&CAN Err", "4-Lock(68) Open",
                                         "5-DO Input Act", "6-Seristop Open", "7-Over Load", "8-Door Open 66",

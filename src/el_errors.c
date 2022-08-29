@@ -16,9 +16,9 @@ extern char ListOfErrors[][ERR_MESSAGE_LEN];
 
 int Error_check(ElevatorMode status) {
 
-    uint8_t str_null[] = {""};
+    char str_null[] = {""};
 
-    uint8_t flag = 0;
+    char flag = 0;
 
     switch (status) {
         case Normal:
@@ -44,7 +44,7 @@ int Error_check(ElevatorMode status) {
                 flag = 10;
 
             if (!flag) {
-                Disp_String((char *) str_null);
+                Disp_String(str_null);
                 return 1;
             } else Show_error(flag);
 
@@ -53,6 +53,38 @@ int Error_check(ElevatorMode status) {
         default:
             break;
     }
+
+    if (status == door_check && OUTPUTS[RDC] == true) {
+        if (INPUTS[T68] == false)
+            flag = 35;
+        else if (INPUTS[T69] == false) {
+            for (int i = INPUTS[CFS]; i < 0; ++i) _delay_ms(1000);
+            if (INPUTS[T69] == false)
+                flag = 9;
+        } else if (INPUTS[T69] == false && INPUTS[T68] == true) flag = 22;
+
+        if (!flag) {
+            Disp_Wirte_Line2(&flag);
+            return 1;
+        } else Show_error(flag);
+        return 0;
+    }
+
+    if (status == door_check && OUTPUTS[RDC] == false) {
+        if (INPUTS[T69] == true) {
+            for (int i = INPUTS[5]; i > 0; i--)
+                _delay_ms(1000);
+            if (INPUTS[T69] == true)
+                flag = 9;
+        } else if (INPUTS[T69] == false && INPUTS[T68] == true)
+            flag = 22;
+        if (!flag) {
+            Disp_Wirte_Line2(str_null);
+            return 1;
+        } else Show_error(flag);
+        return 0;
+    }
+
 
     return 0;
 }

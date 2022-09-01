@@ -21,7 +21,7 @@ void Lcd_Init(void);
 
 void Disp_Command(unsigned char);
 
-#define  Disp_Cmd(a)    Disp_Command(a);
+#define  Disp_Cmd(a)    Disp_Command(a)
 
 
 void Disp_Char(char);

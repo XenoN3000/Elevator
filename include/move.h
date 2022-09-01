@@ -3,6 +3,7 @@
 
 #include "eldefs.h"
 #include "io_updator.h"
+#include "el_errors.h"
 
 void Rev_Up();
 void Rev_Down();

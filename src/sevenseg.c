@@ -17,8 +17,8 @@ void SVG_Init() {
     DDRA |= _BV(p1);       // turn on mumerator 7seg
     PORTA &= ~(_BV(p1));
     DDRC = OUTPUT;
-    DDRE |= 0b11000000;    //bit 6 , 7
-    DDRG |= 0b00010110;    // bit 1,2,4
+    DDRE |= (HIGH << p7) | (HIGH << p6);  //bit 6 , 7
+    DDRG |= (HIGH << p4) | (HIGH << p2)| (HIGH << p1);   // bit 1,2,4
 
 
 }

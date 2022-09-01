@@ -52,7 +52,7 @@ void Rev_Up() {
 
     OUTPUTS[RDC] = true;
 
-    if (INPUTS[RVU] && INPUTS[CAN] == true) {
+    if (INPUTS[RVU] && Error_check(Revision) == 1 && INPUTS[CAN] == true) {
         Slow();
         Up();
     }

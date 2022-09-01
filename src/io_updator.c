@@ -9,8 +9,8 @@ void InputUpdate() {
     DDRD = 0x00;
     PORTD = 0xFF;
 
-    DDRE |= 0b00110000;
-    DDRG |= 0b00001001;
+    DDRE |= (HIGH<< p5)|(HIGH<< p4);
+    DDRG |= (HIGH<< p3)|(HIGH<< p0);
 
 
     for (int i = 0; i < INPUT_ARRAY_SIZE; ++i)
@@ -35,7 +35,7 @@ void InputUpdate() {
     PORTG &= ~(_BV(p0));
     _delay_ms(5);
     Input_Reg_Update(PIND, &counter);
-    PORTG |= 0b00001001;
+    PORTG |= (HIGH<< p3)|(HIGH<< p0);
 
     Input_Reg_Update(PINB, &counter);
 

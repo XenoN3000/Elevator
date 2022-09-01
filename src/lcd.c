@@ -31,7 +31,7 @@ void Lcd_Init() {
 
 void Disp_Command(unsigned char cmd) {
 
-    char cmd_temp = cmd & 0xF0;
+    unsigned char cmd_temp = cmd & 0xF0;
     execute_command(cmd_temp);
     cmd_temp = ((cmd << 4) & 0xF0);
     execute_command(cmd_temp);
@@ -42,7 +42,7 @@ void Disp_Command(unsigned char cmd) {
 
 void Disp_Char(char data) {
 
-    char data_temp = data & 0xF0;
+    unsigned char data_temp = data & 0xF0;
     Disp_data(data_temp);
     data_temp = ((data << 4) & 0xF0);
     Disp_data(data_temp);
@@ -87,6 +87,9 @@ void Disp_Cursor(int condition) {
         case 1:
             Disp_Command(0x0F);
             break;
+
+        default:
+            break;
     }
 
 }
@@ -94,10 +97,10 @@ void Disp_Cursor(int condition) {
 void Disp_String(char *str) {
 
     int i = 0;
-    for (i; str[i] != '\0'; i++) {
+    for (; str[i] != '\0'; i++) {
         Disp_Char(str[i]);
     }
-    for (i; i < 16; i++)
+    for (; i < 16; i++)
         Disp_Char(' ');
 
 }
